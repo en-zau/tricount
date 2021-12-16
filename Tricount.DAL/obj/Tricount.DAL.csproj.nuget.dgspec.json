@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj": {}
+    "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj": {
+    "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj",
-        "projectName": "Tricount",
-        "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj",
+        "projectUniqueName": "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj",
+        "projectName": "Tricount.DAL",
+        "projectPath": "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj",
         "packagesPath": "C:\\Users\\camer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\obj\\",
+        "outputPath": "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\camer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,20 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

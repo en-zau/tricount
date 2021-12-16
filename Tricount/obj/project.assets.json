@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gouer\\.nuget\\packages\\": {}
+    "C:\\Users\\camer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount\\Tricount.csproj",
+      "projectUniqueName": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj",
       "projectName": "Tricount",
-      "projectPath": "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount\\Tricount.csproj",
-      "packagesPath": "C:\\Users\\gouer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount\\obj\\",
+      "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj",
+      "packagesPath": "C:\\Users\\camer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gouer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\camer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
