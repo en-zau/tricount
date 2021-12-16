@@ -10,7 +10,7 @@ namespace Tricount
     {
         public int id { get; set; }
 
-        public int nom { get; set; }
+        public string nom { get; set; }
 
         public int organisteur { get; set; }
 
@@ -20,7 +20,7 @@ namespace Tricount
 
         public int id_soiree { get; set; }
 
-        public user(int Nom, int Organisateur, int Dettes, int Depenses, int ID_Soiree)
+        public user(string Nom, int Organisateur, int Dettes, int Depenses, int ID_Soiree)
         {
             nom = Nom;
             organisteur = Organisateur;
@@ -29,7 +29,7 @@ namespace Tricount
             id_soiree = ID_Soiree;
         }
 
-        public user(int ID, int Nom, int Organisateur, int Dettes, int Depenses, int ID_Soiree)
+        public user(int ID, string Nom, int Organisateur, int Dettes, int Depenses, int ID_Soiree)
             : this(Nom, Organisateur, Dettes, Depenses, ID_Soiree)
         {
             id = ID;

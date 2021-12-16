@@ -21,7 +21,7 @@ namespace Tricount.DAL
             while (reader.Read())
             {
                 var u = new user_DAL(reader.GetInt32(0),
-                                                    reader.GetInt32(1),
+                                                    reader.GetString(1),
                                                     reader.GetInt32(2),
                                                     reader.GetInt32(3),
                                                     reader.GetInt32(4),
@@ -48,7 +48,7 @@ namespace Tricount.DAL
             if (reader.Read())
             {
                 u = new user_DAL(reader.GetInt32(0),
-                                                reader.GetInt32(1),
+                                                reader.GetString(1),
                                                 reader.GetInt32(2),
                                                 reader.GetInt32(3),
                                                 reader.GetInt32(4),
