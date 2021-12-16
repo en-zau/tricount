@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj": {}
+    "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
+    "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj",
         "projectName": "Tricount.DAL",
-        "projectPath": "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj",
-        "packagesPath": "C:\\Users\\camer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\camer\\source\\repos\\Tricount\\Tricount.DAL\\obj\\",
+        "projectPath": "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount.DAL\\Tricount.DAL.csproj",
+        "packagesPath": "C:\\Users\\gouer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gouer\\source\\repos\\Tricount\\Tricount.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\camer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gouer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
