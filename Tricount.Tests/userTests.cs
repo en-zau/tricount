@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Tricount;
-using TheoryAttribute = Xunit.TheoryAttribute;
 
 namespace Tricount.Tests
 {
@@ -30,7 +29,6 @@ namespace Tricount.Tests
             Assert.Equals(Dettes, u.depenses);
             Assert.Equals(ID_Soiree, u.id_soiree);
             Assert.NotNull(u);
-            Assert.IsType<user>(u);
         }
     }
 }

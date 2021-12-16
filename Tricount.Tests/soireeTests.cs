@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Tricount;
-using TheoryAttribute = Xunit.TheoryAttribute;
 
 namespace Tricount.Tests
 {
@@ -27,7 +26,6 @@ namespace Tricount.Tests
             Assert.Equals(Total_Soiree, s.total_soiree);
             Assert.Equals(Moyenne_User, s.moyenne_user);
             Assert.NotNull(s);
-            Assert.IsType<soiree>(s);
         }
     }
 }
