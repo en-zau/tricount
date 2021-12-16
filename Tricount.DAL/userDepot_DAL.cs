@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tricount.DAL
 {
-    public abstract class userDepot_DAL : Depot_DAL<user_DAL>
+    public class userDepot_DAL : Depot_DAL<user_DAL>
     {
         public override List<user_DAL> GetAll()
         {
