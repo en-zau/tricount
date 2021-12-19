@@ -13,7 +13,7 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select id, nbparticipant, total_soiree, moyenne_user from soiree";
+            commande.CommandText = "select id, name from soiree";
             var reader = commande.ExecuteReader();
 
             var listeSoiree = new List<soiree_DAL>();
@@ -21,9 +21,7 @@ namespace Tricount.DAL
             while (reader.Read())
             {
                 var s = new soiree_DAL(reader.GetInt32(0),
-                                                    reader.GetInt32(1),
-                                                    reader.GetInt32(2),
-                                                    reader.GetInt32(3));
+                                                    reader.GetString(1));
 
                 listeSoiree.Add(s);
             }
@@ -37,7 +35,7 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select id, nbparticipant, total_soiree, moyenne_user from soiree where ID=@ID";
+            commande.CommandText = "select id, name from soiree where ID=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", ID));
             var reader = commande.ExecuteReader();
 
@@ -46,9 +44,7 @@ namespace Tricount.DAL
             if (reader.Read())
             {
                 s = new soiree_DAL(reader.GetInt32(0),
-                                                reader.GetInt32(1),
-                                                reader.GetInt32(2),
-                                                reader.GetInt32(3));
+                                                reader.GetString(1));
             }
             else
             {
@@ -64,16 +60,13 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into soiree(nbparticipant, total_soiree, moyenne_user)" + " values (@NBPARTICAPANT, @TOTAL_SOIREE, @MOYENNE_USER); select scope_identity()";
-            commande.Parameters.Add(new SqlParameter("@NBPARTICIPANT", soiree.nb_participant));
-            commande.Parameters.Add(new SqlParameter("@ID_PANIER_GLOBAL", soiree.total_soiree));
-            commande.Parameters.Add(new SqlParameter("@ID_PANIER_GLOBAL", soiree.moyenne_user));
+            commande.CommandText = "insert into soiree(name)" + " values (@NAME); select scope_identity()";
+            commande.Parameters.Add(new SqlParameter("@NAME", soiree.name));
 
             var ID = Convert.ToInt32((decimal)commande.ExecuteScalar());
 
-            soiree.nb_participant = GetByID(ID).nb_participant;
-            soiree.total_soiree = GetByID(ID).total_soiree;
-            soiree.moyenne_user = GetByID(ID).moyenne_user;
+            soiree.name = GetByID(ID).name;
+
             DetruireConnexionEtCommande();
 
             return soiree;
@@ -83,7 +76,7 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "update soiree set nbparticipant=@NBPARTICIPANT, total_soiree=@TOTAL_SOIREE moyenne_user=@MOYENNE_USER where ID=@ID";
+            commande.CommandText = "update soiree set name=@NAME where ID=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", soiree.id));
 
             var nbLignes = (int)commande.ExecuteNonQuery();
@@ -93,9 +86,7 @@ namespace Tricount.DAL
                 throw new Exception($"Impossible de mettre à jour la soirée d'ID {soiree.id}");
             }
 
-            soiree.nb_participant = GetByID(soiree.id).nb_participant;
-            soiree.total_soiree = GetByID(soiree.id).total_soiree;
-            soiree.moyenne_user = GetByID(soiree.id).moyenne_user;
+            soiree.name = GetByID(soiree.id).name;
 
             DetruireConnexionEtCommande();
 

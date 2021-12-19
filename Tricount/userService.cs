@@ -14,7 +14,7 @@ namespace Tricount
         public List<user> GetAllUser()
         {
             var user = depot.GetAll()
-                    .Select(u => new user(u.id, u.nom, u.organisteur, u.dettes, u.depenses, u.id_soiree))
+                    .Select(u => new user(u.id, u.nom, u.depenses, u.id_soiree))
                     .ToList();
 
             return user;
@@ -22,27 +22,35 @@ namespace Tricount
         public user GetByID(int ID)
         {
             var u = depot.GetByID(ID);
-            var user = new user(u.id, u.nom, u.organisteur, u.dettes, u.depenses, u.id_soiree);
+            var user = new user(u.id, u.nom, u.depenses, u.id_soiree);
             return user;
         }
         public user Insert(user u)
         {
-            var user = new user_DAL(u.nom, u.organisteur, u.dettes, u.depenses, u.id_soiree);
+            var user = new user_DAL(u.nom, u.depenses, u.id_soiree);
             depot.Insert(user);
 
             return u;
         }
         public user Update(user u)
         {
-            var user = new user_DAL(u.nom, u.organisteur, u.dettes, u.depenses, u.id_soiree);
+            var user = new user_DAL(u.nom, u.depenses, u.id_soiree);
             depot.Update(user);
 
             return u;
         }
         public void Delete(user u)
         {
-            var user = new user_DAL(u.nom, u.organisteur, u.dettes, u.depenses, u.id_soiree);
+            var user = new user_DAL(u.nom, u.depenses, u.id_soiree);
             depot.Delete(user);
+        }
+
+        public user GetUserBySoiree(user u)
+        {
+            var user = depot.GetUserBySoiree(ID)
+                .Select(u => new user(u.id, u))
+                .ToList();
+            return guests;
         }
     }
 }

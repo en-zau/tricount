@@ -14,7 +14,7 @@ namespace Tricount
         public List<soiree> GetAllSoiree()
         {
             var soiree = depot.GetAll()
-                    .Select(s => new soiree(s.id, s.nb_participant, s.total_soiree, s.moyenne_user))
+                    .Select(s => new soiree(s.id, s.name))
                     .ToList();
 
             return soiree;
@@ -22,26 +22,26 @@ namespace Tricount
         public soiree GetSoireeByID(int ID)
         {
             var s = depot.GetByID(ID);
-            var soiree = new soiree(s.id, s.nb_participant, s.total_soiree, s.moyenne_user);
+            var soiree = new soiree(s.id, s.name);
             return soiree;
         }
         public soiree Insert(soiree s)
         {
-            var soiree = new soiree_DAL(s.nb_participant, s.total_soiree, s.moyenne_user);
+            var soiree = new soiree_DAL(s.name);
             depot.Insert(soiree);
 
             return s;
         }
         public soiree Update(soiree s)
         {
-            var soiree = new soiree_DAL(s.nb_participant, s.total_soiree, s.moyenne_user);
+            var soiree = new soiree_DAL(s.name);
             depot.Update(soiree);
 
             return s;
         }
         public void Delete(soiree s)
         {
-            var soiree = new soiree_DAL(s.nb_participant, s.total_soiree, s.moyenne_user);
+            var soiree = new soiree_DAL(s.name);
             depot.Delete(soiree);
         }
     }

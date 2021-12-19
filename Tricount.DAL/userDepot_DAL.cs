@@ -13,7 +13,7 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select id, nom, organisateur, dettes, depenses, id_soiree from user";
+            commande.CommandText = "select id, nom, depenses, id_soiree from user";
             var reader = commande.ExecuteReader();
 
             var listeUser = new List<user_DAL>();
@@ -23,9 +23,7 @@ namespace Tricount.DAL
                 var u = new user_DAL(reader.GetInt32(0),
                                                     reader.GetString(1),
                                                     reader.GetInt32(2),
-                                                    reader.GetInt32(3),
-                                                    reader.GetInt32(4),
-                                                    reader.GetInt32(5));
+                                                    reader.GetInt32(3));
 
                 listeUser.Add(u);
             }
@@ -39,7 +37,7 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select id, nom, organisateur, dettes, depenses, id_soiree from user where ID=@ID";
+            commande.CommandText = "select id, nom, depenses, id_soiree from user where ID=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", ID));
             var reader = commande.ExecuteReader();
 
@@ -50,9 +48,7 @@ namespace Tricount.DAL
                 u = new user_DAL(reader.GetInt32(0),
                                                 reader.GetString(1),
                                                 reader.GetInt32(2),
-                                                reader.GetInt32(3),
-                                                reader.GetInt32(4),
-                                                reader.GetInt32(5));
+                                                reader.GetInt32(3));
             }
             else
             {
@@ -68,18 +64,14 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into user(nom, organisateur, dettes, depenses, id_soiree)" + " values (@NOM, @ORGANISATEUR, @DETTES, @DEPENSES, @ID_SOIREE); select scope_identity()";
+            commande.CommandText = "insert into user(nom, depenses, id_soiree)" + " values (@NOM, @ORGANISATEUR, @DETTES, @DEPENSES, @ID_SOIREE); select scope_identity()";
             commande.Parameters.Add(new SqlParameter("@NOM", user.nom));
-            commande.Parameters.Add(new SqlParameter("@ORGANISATEUR", user.organisteur));
-            commande.Parameters.Add(new SqlParameter("@DETTES", user.dettes));
             commande.Parameters.Add(new SqlParameter("@DEPENSES", user.depenses));
             commande.Parameters.Add(new SqlParameter("@ID_SOIREE", user.id_soiree));
 
             var ID = Convert.ToInt32((decimal)commande.ExecuteScalar());
 
             user.nom = GetByID(ID).nom;
-            user.organisteur = GetByID(ID).organisteur;
-            user.dettes = GetByID(ID).dettes;
             user.depenses = GetByID(ID).depenses;
             user.id_soiree = GetByID(ID).id_soiree;
             DetruireConnexionEtCommande();
@@ -91,7 +83,7 @@ namespace Tricount.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "update user set nom=@NOM, organisateur=@ORGANISATEUR dettes=@DETTES depenses=@DEPENSES, id_soiree=@ID_SOIREE where ID=@ID";
+            commande.CommandText = "update user set nom=@NOM, depenses=@DEPENSES, id_soiree=@ID_SOIREE where ID=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", user.id));
 
             var nbLignes = (int)commande.ExecuteNonQuery();
@@ -102,8 +94,6 @@ namespace Tricount.DAL
             }
 
             user.nom = GetByID(user.id).nom;
-            user.organisteur = GetByID(user.id).organisteur;
-            user.dettes = GetByID(user.id).dettes;
 
             DetruireConnexionEtCommande();
 
@@ -125,6 +115,31 @@ namespace Tricount.DAL
             }
 
             DetruireConnexionEtCommande();
+        }
+
+        public override List<user_DAL> GetUserBySoiree(int ID)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "select id, nom, depenses, id_soiree from user where ID_SOIREE=@ID_SOIREE";
+            commande.Parameters.Add(new SqlParameter("@ID_SOIREE", ID));
+            var reader = commande.ExecuteReader();
+
+            user_DAL u;
+            var listeAllUser = new List<user_DAL>();
+
+            while (reader.Read())
+            {
+                u = new user_DAL(reader.GetInt32(0),
+                                                reader.GetString(1),
+                                                reader.GetInt32(2),
+                                                reader.GetInt32(3));
+                listeAllUser.Add(u);
+            }
+
+            DetruireConnexionEtCommande();
+
+            return listeAllUser;
         }
     }
 }

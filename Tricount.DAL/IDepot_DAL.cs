@@ -19,5 +19,7 @@ namespace Tricount.DAL
         public Type_DAL Update(Type_DAL item);
 
         public void Delete(Type_DAL item);
+
+        public List<Type_DAL> GetUserBySoiree(int ID);
     }
 }

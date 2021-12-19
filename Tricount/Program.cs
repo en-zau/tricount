@@ -10,9 +10,14 @@ namespace Tricount
 {
     class Program
     {
+        private static userService US = new userService();
+        private static soireeService SS = new soireeService();
+
+
         static int menu()
         {
             Console.WriteLine("Bienvenue sur l'Application de soirée !");
+            Console.WriteLine("------------------------------------------\n");
             Console.WriteLine("1 Créer une soirée");
             Console.WriteLine("2 Participer à une soirée");
             Console.WriteLine("3 Affichage des dettes et dépenses");
@@ -28,7 +33,7 @@ namespace Tricount
             }
             if (choixmenu == 3)
             {
-                affichage();
+                affichageDettes();
             }
             else
             {
@@ -38,88 +43,106 @@ namespace Tricount
             return 0;
         }
 
-        static int creersoiree()
+        static soiree creersoiree()
         {
+            Console.WriteLine("quel est le nom de votre soirée ?");
+            var name = Console.ReadLine();
+            var n = new soiree(name);
+            SS.Insert(n);
 
-            Console.WriteLine("soirée créee !");
+            Console.WriteLine("\nsoirée créee !");
 
-            return 0;
+            return n;
+        }
+
+        static void AfficherPartie()
+        {
+            var parties = SS.GetAllSoiree();
+            parties.ForEach(p =>
+            {
+                Console.WriteLine(p.ToString());
+            });
+            Console.WriteLine("\n");
         }
 
         static int participersoiree()
         {
-            var soiree = new soireeDepot_DAL();
-
-            var listeSoiree = soiree.GetAll();
+            var listeSoiree = SS.GetAllSoiree();
 
             Console.WriteLine("Voici la liste des soirée :\n");
 
-            for (int i = 0; i != listeSoiree.size(); i++)
-            {
-                Console.WriteLine("", i, listeSoiree);
-            }
+            AfficherPartie();
 
-            Console.WriteLine("Souhaitez vous participer à quelle soirée ?");
+            Console.WriteLine("Vous souhaitez participer à quelle soirée ?");
             int choixsoiree = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i != listeSoiree.size(); i++)
-            {
-                if (choixsoiree == soiree.id)
-                {
-                    var Soiree = soiree.GetByID(choixsoiree);
+            var Soiree = SS.GetSoireeByID(choixsoiree);
 
-                    int nbparticipant = Soiree.nbparticipant;
-                    nbparticipant = nbparticipant++;
-                }
-            } 
+
+            Console.WriteLine("Comment vous appelez-vous ?\n");
+            var user = Console.ReadLine();
+
+            Console.WriteLine("Combien voulez-vous mettre d'argent ?");
+            int depense = int.Parse(Console.ReadLine());
+            var u= new user(user, depense, choixsoiree);
 
             return 0;
         }
 
-        static int affichage()
-        {
-            var user = new userDepot_DAL();
 
-            Console.WriteLine("Voici vos dettes : ", user.dettes);
-            Console.WriteLine("Voci vos dépenses : ", user.depenses);
-            return 0;
+        static void affichageDettes()
+        {
+            var listeSoiree = SS.GetAllSoiree();
+
+            Console.WriteLine("Voici la liste des soirée :\n");
+
+            AfficherPartie();
+
+            Console.WriteLine("Vous souhaitez voir quelle soirée ?");
+            int choixsoiree = int.Parse(Console.ReadLine());
+
+            var Soiree = SS.GetSoireeByID(choixsoiree);
+
+            //récupérer nbuser
+
+            int prix1;
+            int prix2;
+            int prixtmp;
+
+            int moyenne = 0; //faire la moyenne
+
+            for (int i = 0; i < nbuser; i++)
+            {
+                if (user.depenses < moyenne)
+                {
+                    //définir le prix 1 sur les depenses du user devant rembourser
+                    prix1 = moyenne - user.depenses;
+
+                    for (int i = 0; i < nbuser; i++)
+                    {
+                        //définir le prix 2 sur les depenses du user devant être rembourser
+                        prix2 = moyenne - user.depenses;
+                    }
+
+                    prixtmp = prix1 - prix2;
+                    Console.WriteLine("L'utilisateur ... doit" prix1 "à l'urtilisateur ...");
+
+                    if (prixtmp > 0)
+                    {
+                        prix1 = prix1 - prixtmp;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
         }
 
 
         static void Main(string[] args)
         {
             menu();
-        }
-    }
-}
-
-
-
-
-
-/* var depo = new UserDepot_DAL();
-
-            var user = new User(3, "bob", 12.2);
-
-            var user1 = new User_DAL(3, "bob", 12.65);
-            depo.Insert(user1);
-
- var test = depo.GetByID(3);
-            test.ADRESSE = "88888";
-            depo.Update(test);
- 
-
-
-
-
-        static int creerpartie()
-        {
-            var depo = new SpendingGroupDepot_DAL();
-
-            var tmp = new SpendingGroup_DAL("romain1erdlan", '2022-01-01 00:00:00.00');
-
-            depo.Insert(tmp);
-            return 0;
         }
     }
 }

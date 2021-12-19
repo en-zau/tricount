@@ -49,6 +49,8 @@ namespace Tricount.DAL
         public abstract Type_DAL Insert(Type_DAL item);
 
         public abstract Type_DAL Update(Type_DAL item);
+
+        public abstract List<Type_DAL> GetUserBySoiree(int ID);
         #endregion
     }
 }

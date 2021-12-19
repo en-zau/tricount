@@ -13,5 +13,6 @@ namespace Tricount
         public user Insert(user u);
         public user Update(user u);
         public void Delete(user u);
+        public user GetUserBySoiree(user u);
     }
 }
