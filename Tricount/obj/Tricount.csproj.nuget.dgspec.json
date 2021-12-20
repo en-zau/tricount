@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj": {}
+    "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\Tricount.csproj": {}
   },
   "projects": {
-    "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
+    "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj",
         "projectName": "Tricount.DAL",
-        "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj",
-        "packagesPath": "C:\\Users\\camer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.DAL\\obj\\",
+        "projectPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj",
+        "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\camer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -68,22 +74,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj": {
+    "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\Tricount.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\Tricount.csproj",
         "projectName": "Tricount",
-        "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj",
-        "packagesPath": "C:\\Users\\camer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\obj\\",
+        "projectPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\Tricount.csproj",
+        "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\camer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -96,8 +108,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
-                "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj"
+              "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj": {
+                "projectPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.DAL\\Tricount.DAL.csproj"
               }
             }
           }
@@ -126,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

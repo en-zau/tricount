@@ -1172,20 +1172,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\camer\\.nuget\\packages\\": {}
+    "C:\\Users\\thoma\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.Tests\\Tricount.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.Tests\\Tricount.Tests.csproj",
       "projectName": "Tricount.Tests",
-      "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.Tests\\Tricount.Tests.csproj",
-      "packagesPath": "C:\\Users\\camer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount.Tests\\obj\\",
+      "projectPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.Tests\\Tricount.Tests.csproj",
+      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount.Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\camer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1198,8 +1206,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj": {
-              "projectPath": "C:\\Users\\camer\\Source\\Repos\\tricount\\Tricount\\Tricount.csproj"
+            "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\Tricount.csproj": {
+              "projectPath": "C:\\Users\\thoma\\source\\repos\\tricount\\Tricount\\Tricount.csproj"
             }
           }
         }
@@ -1238,7 +1246,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

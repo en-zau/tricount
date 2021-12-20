@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Tricount.DAL
-build_property.ProjectDir = C:\Users\camer\Source\Repos\tricount\Tricount.DAL\
+build_property.ProjectDir = C:\Users\thoma\source\repos\tricount\Tricount.DAL\
